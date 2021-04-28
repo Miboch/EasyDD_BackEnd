@@ -1,6 +1,5 @@
 ﻿import {Express, Request, Response} from 'express';
 const app: Express = require('express')();
-
 const PORT: number = 8000;
 
 app.get('/', (req: Request, res: Response) => res.send('Express + TypeScript Server'));

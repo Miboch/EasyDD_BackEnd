@@ -1,0 +1,5 @@
+﻿{
+  "connectString": "develop-db",
+  "encryptKey": "thisIsJustAKeyWeUseInDevelopmentWhichShouldBeReplacedWhenWeDeployOtherwiseOurPasswordsWontBeSafe",
+  "port": 5010
+}

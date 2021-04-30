@@ -14,6 +14,7 @@ test('Environment has all required props', () => {
     expect(keys).toContain('connectString');
     expect(keys).toContain('encryptKey');
     expect(keys).toContain('port');
+    expect(keys).toContain('development');
 });
 
 test('Expect error when environment not found', () => {

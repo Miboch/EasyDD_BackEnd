@@ -1,5 +1,6 @@
 ﻿export interface EnvironmentModel {
     connectString?: string;
     encryptKey?: string;
-    port?: number
+    port?: number,
+    development?: boolean
 }

@@ -1,5 +1,6 @@
 ﻿{
-  "connectString": "develop-db",
+  "connectString": "easy_dd.db",
   "encryptKey": "thisIsJustAKeyWeUseInDevelopmentWhichShouldBeReplacedWhenWeDeployOtherwiseOurPasswordsWontBeSafe",
-  "port": 5010
+  "port": 5010,
+  "development": true
 }

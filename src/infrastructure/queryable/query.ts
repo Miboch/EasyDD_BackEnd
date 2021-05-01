@@ -1,6 +1,7 @@
 ﻿import {Database} from 'sqlite3';
+import {QueryableModel} from '../../types/queryable.model';
 
-export abstract class Query<Model> {
+export abstract class Query<Model extends QueryableModel> {
     protected constructor(protected dbDriver: Database) {
     }
 
@@ -42,7 +43,56 @@ export abstract class Query<Model> {
         });
     }
 
+    protected async baseUpdate(table: string, props: Model): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            let ins = this.generateInsertsForUpdate(props)
+            let statement = this.dbDriver.prepare(
+                `UPDATE ${table}
+                 SET ${ins}
+                 WHERE id = ${props.id}`
+            );
+            statement.run(function (err) {
+                if (err) reject(false);
+                resolve(true)
+            });
+        });
+    }
+
+    protected baseGet(table: string, id: number) {
+        return new Promise((resolve, reject) => {
+            let statement = this.dbDriver.prepare(`SELECT * FROM ${table} where id = ?`);
+            statement.get(id, function (err, row) {
+                if (err) reject(err);
+                resolve(row)
+            });
+        });
+    }
+
+    protected baseDelete(table: string, id: number): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            let statement = this.dbDriver.prepare(`DELETE FROM ${table} where id = ?`);
+            statement.run(id, (err) => {
+                if(err) reject(err);
+                resolve(true)
+            })
+        })
+    }
+
+
+    private generateInsertsForUpdate(props: Model): string {
+        return Object.keys(props).reduce((a, k) => {
+            if (k != 'id') {
+                let s = typeof props[k] == 'string' ? `'${props[k]}'` : `${props[k]}`
+                a.push(`${k} = ${s}`)
+            }
+            return a;
+        }, []).join(", ");
+    }
+
     abstract all(): Promise<Model[]>;
 
+    abstract get(id: number): Promise<Model>;
+
+    abstract update(model: Model): Promise<boolean>;
 
 }

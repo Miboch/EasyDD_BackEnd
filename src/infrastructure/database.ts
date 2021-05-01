@@ -28,5 +28,6 @@ async function ensureTablesCreated() {
     await tool.run(`CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR, salt VARCHAR(20), password VARCHAR)`);
     await tool.run(`CREATE UNIQUE INDEX IF NOT EXISTS users_name_index ON users(username)`);
     await tool.run(`CREATE UNIQUE INDEX IF NOT EXISTS users_id_index ON users(id)`);
+
 }
 

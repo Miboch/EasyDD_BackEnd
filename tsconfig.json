@@ -6,7 +6,7 @@
     "target": "ES6",
     "esModuleInterop": true,
     "sourceMap": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "@type": ["./src/types/*"]

@@ -16,4 +16,16 @@ export class UserQuery extends Query<UserModel> {
         return super.each(`SELECT * FROM ${Tables.USERS}`);
     }
 
+    async update(user: UserModel): Promise<boolean> {
+        return this.baseUpdate(Tables.USERS, user);
+    }
+
+    async get(id: number): Promise<UserModel> {
+        return this.baseGet(Tables.USERS, id);
+    }
+
+    async delete(id: number): Promise<boolean> {
+        return this.baseDelete(Tables.USERS, id);
+    }
+
 }

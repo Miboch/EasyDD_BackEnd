@@ -2,5 +2,7 @@
   "connectString": "easy_dd.db",
   "encryptKey": "thisIsJustAKeyWeUseInDevelopmentWhichShouldBeReplacedWhenWeDeployOtherwiseOurPasswordsWontBeSafe",
   "port": 5010,
-  "development": true
+  "development": true,
+  "inMemoryDB": true,
+  "uploadImagePath": "./userImages/"
 }

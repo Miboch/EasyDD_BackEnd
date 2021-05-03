@@ -1,31 +1,31 @@
-﻿import {UserModel} from '../../types';
-import {Query} from './query';
+﻿import {Query} from './query';
 import {Database} from 'sqlite3';
-import {Tables} from '../../types/tables';
+import {UserModel} from '../../domain';
+import {Tables} from '../tables';
 
 export class UserQuery extends Query<UserModel> {
     constructor(dbDriver: Database) {
-        super(dbDriver);
+        super(dbDriver, Tables.USERS);
     }
 
     async insert(props: UserModel): Promise<any> {
-        return await super.baseInsert(Tables.USERS, props)
+        return await super.baseInsert(props)
     }
 
     async all(): Promise<UserModel[]> {
-        return super.each(`SELECT * FROM ${Tables.USERS}`);
+        return super.baseAll();
     }
 
     async update(user: UserModel): Promise<boolean> {
-        return this.baseUpdate(Tables.USERS, user);
+        return super.baseUpdate(user);
     }
 
     async get(id: number): Promise<UserModel> {
-        return this.baseGet(Tables.USERS, id);
+        return super.baseGet(id);
     }
 
     async delete(id: number): Promise<boolean> {
-        return this.baseDelete(Tables.USERS, id);
+        return super.baseDelete(id);
     }
 
 }

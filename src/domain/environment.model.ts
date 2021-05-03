@@ -2,5 +2,7 @@
     connectString?: string;
     encryptKey?: string;
     port?: number,
-    development?: boolean
+    development?: boolean,
+    inMemoryDB?: boolean,
+    uploadImagePath?: string
 }

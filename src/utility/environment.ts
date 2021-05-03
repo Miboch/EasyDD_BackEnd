@@ -1,5 +1,5 @@
 ﻿import * as fs from 'fs';
-import {EnvironmentModel} from '../types';
+import {EnvironmentModel} from '../domain';
 
 export let environment: EnvironmentModel;
 

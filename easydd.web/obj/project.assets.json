@@ -699,10 +699,7 @@
         },
         "runtime": {
           "bin/placeholder/easydd.application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "easydd.core/1.0.0": {
         "type": "project",
@@ -719,10 +716,7 @@
         },
         "runtime": {
           "bin/placeholder/easydd.core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "easydd.infrastructure/1.0.0": {
         "type": "project",
@@ -740,10 +734,7 @@
         },
         "runtime": {
           "bin/placeholder/easydd.infrastructure.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -1912,23 +1903,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mc.AIRSUPPORT\\.nuget\\packages\\": {},
+    "C:\\Users\\Mikkel\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.web\\easydd.web.csproj",
+      "projectUniqueName": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.web\\easydd.web.csproj",
       "projectName": "easydd.web",
-      "projectPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.web\\easydd.web.csproj",
-      "packagesPath": "C:\\Users\\mc.AIRSUPPORT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.web\\obj\\",
+      "projectPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.web\\easydd.web.csproj",
+      "packagesPath": "C:\\Users\\Mikkel\\.nuget\\packages\\",
+      "outputPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mc.AIRSUPPORT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mikkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1936,18 +1927,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://package.asserver.local/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.application\\easydd.application.csproj": {
-              "projectPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.application\\easydd.application.csproj"
+            "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.application\\easydd.application.csproj": {
+              "projectPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.application\\easydd.application.csproj"
             },
-            "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.infrastructure\\easydd.infrastructure.csproj": {
-              "projectPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.infrastructure\\easydd.infrastructure.csproj"
+            "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.infrastructure\\easydd.infrastructure.csproj": {
+              "projectPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.infrastructure\\easydd.infrastructure.csproj"
             }
           }
         }
@@ -2011,7 +2001,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

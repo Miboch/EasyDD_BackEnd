@@ -1650,23 +1650,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mc.AIRSUPPORT\\.nuget\\packages\\": {},
+    "C:\\Users\\Mikkel\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.core\\easydd.core.csproj",
+      "projectUniqueName": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.core\\easydd.core.csproj",
       "projectName": "easydd.core",
-      "projectPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.core\\easydd.core.csproj",
-      "packagesPath": "C:\\Users\\mc.AIRSUPPORT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mc.AIRSUPPORT\\Desktop\\service updates\\EasyDD_BackEnd\\easydd.core\\obj\\",
+      "projectPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.core\\easydd.core.csproj",
+      "packagesPath": "C:\\Users\\Mikkel\\.nuget\\packages\\",
+      "outputPath": "C:\\Develop\\Web Development\\EasyDD_BackEnd\\easydd.core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mc.AIRSUPPORT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mikkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1674,7 +1674,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://package.asserver.local/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1731,14 +1730,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

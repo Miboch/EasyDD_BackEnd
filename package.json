@@ -1,0 +1,32 @@
+{
+  "name": "easydd_backend",
+  "version": "1.0.0",
+  "description": "This project hosts the API and back-end for its sister project located [here](https://github.com/Miboch/EasyDD_FrontEnd)",
+  "main": "index.js",
+  "dependencies": {
+    "babel-jest": "^26.6.3",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
+    "sqlite3": "^5.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "dotnet build && dotnet run",
+    "build": "dotnet build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miboch/EasyDD_BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miboch/EasyDD_BackEnd/issues"
+  },
+  "homepage": "https://github.com/Miboch/EasyDD_BackEnd#readme"
+}

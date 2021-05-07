@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easydd.infrastructure", "ea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easydd.application", "easydd.application\easydd.application.csproj", "{46841E0A-E791-4C46-939F-33831ACAED05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "easydd.test", "easydd.test\easydd.test.csproj", "{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{46841E0A-E791-4C46-939F-33831ACAED05}.Release|x64.Build.0 = Release|Any CPU
 		{46841E0A-E791-4C46-939F-33831ACAED05}.Release|x86.ActiveCfg = Release|Any CPU
 		{46841E0A-E791-4C46-939F-33831ACAED05}.Release|x86.Build.0 = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|x64.Build.0 = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|x64.ActiveCfg = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|x64.Build.0 = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{022CB5FD-2C1A-4549-9FED-C6F12A9481EF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

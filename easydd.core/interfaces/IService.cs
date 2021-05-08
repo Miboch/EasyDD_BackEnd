@@ -8,12 +8,11 @@ namespace easydd.core.interfaces
 {
     public interface IService<TModelType> where TModelType : Entity, new()
     {
-        public Task<IEnumerable<TModelType>> Collection(Expression<TModelType> exp);
         public Task<IEnumerable<TModelType>> Collection();
         public Task<TModelType> Single(int id);
         public Task<bool> Delete(int id);
-        public Task<TModelType> Update(int id);
-        public Task<TModelType> Create(int id);
+        public Task<TModelType> Update(TModelType model);
+        public Task<TModelType> Create(TModelType model);
 
 
     }

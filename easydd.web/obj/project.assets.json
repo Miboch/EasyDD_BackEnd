@@ -699,7 +699,10 @@
         },
         "runtime": {
           "bin/placeholder/easydd.application.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "easydd.core/1.0.0": {
         "type": "project",
@@ -716,7 +719,10 @@
         },
         "runtime": {
           "bin/placeholder/easydd.core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "easydd.infrastructure/1.0.0": {
         "type": "project",
@@ -734,7 +740,10 @@
         },
         "runtime": {
           "bin/placeholder/easydd.infrastructure.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

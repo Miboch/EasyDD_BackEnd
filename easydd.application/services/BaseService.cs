@@ -1,41 +1,43 @@
 ﻿using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using easydd.core.interfaces;
 using easydd.core.model;
+using Microsoft.EntityFrameworkCore;
 
 namespace easydd.application.services
 {
     public class BaseService<TModelType> : IService<TModelType> where TModelType : Entity, new()
     {
-        public Task<IEnumerable<TModelType>> Collection(Expression<TModelType> exp)
+        private IRepository<TModelType> _repository;
+
+        public BaseService(IRepository<TModelType> repository)
         {
-            throw new System.NotImplementedException();
+            _repository = repository;
         }
 
-        public Task<IEnumerable<TModelType>> Collection()
+        public async Task<IEnumerable<TModelType>> Collection()
         {
-            throw new System.NotImplementedException();
+            return await _repository.Collection().ToListAsync();
         }
 
-        public Task<TModelType> Single(int id)
+        public async Task<TModelType> Single(int id)
         {
-            throw new System.NotImplementedException();
+            return await _repository.Single(id);
         }
 
-        public Task<bool> Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            throw new System.NotImplementedException();
+            return await _repository.Delete(id);
         }
 
-        public Task<TModelType> Update(int id)
+        public async Task<TModelType> Update(TModelType model)
         {
-            throw new System.NotImplementedException();
+            return await _repository.Update(model);
         }
 
-        public Task<TModelType> Create(int id)
+        public async Task<TModelType> Create(TModelType model)
         {
-            throw new System.NotImplementedException();
+            return await _repository.Create(model);
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace easydd.core.model
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace easydd.core.model
 {
-    public class EasyUser : Entity
+    public class EasyUser : IdentityUser<int>
     {
-        
+
     }
 }

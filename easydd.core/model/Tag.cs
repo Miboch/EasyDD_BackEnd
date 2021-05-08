@@ -2,6 +2,6 @@
 {
     public class Tag : Entity
     {
-
+        public string Label { get; set; }
     }
 }

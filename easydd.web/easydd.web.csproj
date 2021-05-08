@@ -22,4 +22,8 @@
     <ProjectReference Include="..\easydd.infrastructure\easydd.infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot" />
+  </ItemGroup>
+
 </Project>

@@ -1,41 +1,64 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using easydd.core.interfaces;
 using easydd.core.model;
+using easydd.infrastructure.context;
+using Microsoft.EntityFrameworkCore;
 
 namespace easydd.infrastructure.repository
 {
     public class BaseRepository<TModelType> : IRepository<TModelType> where TModelType : Entity, new()
     {
-        public Task<IQueryable<TModelType>> Collection(Expression<TModelType> exp)
+        private EasyContext context;
+        protected DbSet<TModelType> DbSet { get; set; }
+
+        public BaseRepository(EasyContext context)
         {
-            throw new System.NotImplementedException();
+            this.context = context;
+            DbSet = this.context.Set<TModelType>();
         }
 
-        public Task<IQueryable<TModelType>> Collection()
+        public IQueryable<TModelType> Collection()
         {
-            throw new System.NotImplementedException();
+            return DbSet.AsQueryable();
         }
 
-        public Task<IQueryable<TModelType>> Single(int id)
+        public async Task<TModelType> Single(int id)
         {
-            throw new System.NotImplementedException();
+            return await DbSet.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<IQueryable<bool>> Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await DbSet.FindAsync(id);
+            if (null != entity)
+            {
+                DbSet.Remove(entity);
+                await SaveChanges();
+            }
+            return null != entity;
         }
 
-        public Task<IQueryable<TModelType>> Update(int id)
+        public async Task<TModelType> Update(TModelType model)
         {
-            throw new System.NotImplementedException();
+            DbSet.Update(model);
+            await SaveChanges();
+            return model;
         }
 
-        public Task<IQueryable<TModelType>> Create(int id)
+        public async Task<TModelType> Create(TModelType model)
         {
-            throw new System.NotImplementedException();
+            DbSet.Add(model);
+            await SaveChanges();
+            return model;
         }
+
+        protected async Task SaveChanges()
+        {
+            await context.SaveChangesAsync();
+        }
+
     }
 }

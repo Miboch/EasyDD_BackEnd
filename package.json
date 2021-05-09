@@ -17,7 +17,10 @@
   "devDependencies": {},
   "scripts": {
     "start": "dotnet build && dotnet run",
-    "build": "dotnet build"
+    "build": "dotnet build",
+	"migrate": "powershell -file migrate.ps1",
+	"udb": "dotnet-ef database update --project=\".\\easydd.infrastructure\" --startup-project=\".\\easydd.web\"",
+    "clean": ""
   },
   "repository": {
     "type": "git",

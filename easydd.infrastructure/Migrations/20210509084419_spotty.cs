@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace easydd.infrastructure.Migrations
 {
-    public partial class initial : Migration
+    public partial class spotty : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

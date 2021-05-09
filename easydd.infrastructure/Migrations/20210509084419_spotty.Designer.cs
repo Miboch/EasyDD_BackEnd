@@ -9,8 +9,8 @@ using easydd.infrastructure.context;
 namespace easydd.infrastructure.Migrations
 {
     [DbContext(typeof(EasyContext))]
-    [Migration("20210508001822_initial")]
-    partial class initial
+    [Migration("20210509084419_spotty")]
+    partial class spotty
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

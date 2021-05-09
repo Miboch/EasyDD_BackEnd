@@ -33,12 +33,12 @@ dotnet tool update --global dotnet-ef
  - Run the migration script to create the database file (first time only, or after cleanup) `npm run udb`
  - Once the database file has been created (default name 'easydd.db') inside the `.\easydd.web` folder you should be ready to run the project 
  
- ###Using NPM
+ ### Using NPM
  ```
  npm run start
  ```
 
-###Using .NET
+### Using .NET
 
 ```
 dotnet run --project easydd.web

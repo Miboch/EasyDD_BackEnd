@@ -40,7 +40,7 @@ namespace easydd.infrastructure.context
                 new Loot() {Id = 2, Value = 10, Name = "Silver"},
                 new Loot() {Id = 3, Value = 50, Name = "Electrum"},
                 new Loot() {Id = 4, Value = 100, Name = "Gold"},
-                new Loot() {Id = 5, Value = 100, Name = "Platinum"}
+                new Loot() {Id = 5, Value = 1000, Name = "Platinum"}
             });
             builder.Entity<LootTable>().HasData(new LootTable()
             {

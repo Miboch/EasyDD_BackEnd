@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace easydd.infrastructure.Migrations
 {
-    public partial class images : Migration
+    public partial class platinum_value_fix : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -274,57 +274,57 @@ namespace easydd.infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5159), "Copper", 1 });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(8874), "Copper", 1 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5593), "Silver", 10 });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9312), "Silver", 10 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5601), "Electrum", 50 });
+                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9321), "Electrum", 50 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 4, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5604), "Gold", 100 });
+                values: new object[] { 4, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9324), "Gold", 100 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 5, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5606), "Platinum", 100 });
+                values: new object[] { 5, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9326), "Platinum", 1000 });
 
             migrationBuilder.InsertData(
                 table: "LootTables",
                 columns: new[] { "Id", "Created", "Name", "Note" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5984), "Simple Coins", "A mix of silver and copper with a low chance of golden coins appearing (max 2)" });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9764), "Simple Coins", "A mix of silver and copper with a low chance of golden coins appearing (max 2)" });
 
             migrationBuilder.InsertData(
                 table: "Tags",
                 columns: new[] { "Id", "Created", "Label" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 570, DateTimeKind.Local).AddTicks(8688), "Sticker" });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 50, 11, 908, DateTimeKind.Local).AddTicks(3077), "Sticker" });
 
             migrationBuilder.InsertData(
                 table: "Tags",
                 columns: new[] { "Id", "Created", "Label" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 572, DateTimeKind.Local).AddTicks(8522), "Background" });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(2219), "Background" });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(6745), false, 1, 1, 0, 20 });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(544), false, 1, 1, 0, 20 });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7200), false, 2, 1, 0, 10 });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(1002), false, 2, 1, 0, 10 });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7208), false, 4, 1, 2, 1 });
+                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(1009), false, 4, 1, 2, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

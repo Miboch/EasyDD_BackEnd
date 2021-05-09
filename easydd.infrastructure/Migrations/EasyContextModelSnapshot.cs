@@ -279,37 +279,37 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5159),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(8874),
                             Name = "Copper",
                             Value = 1
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5593),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9312),
                             Name = "Silver",
                             Value = 10
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5601),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9321),
                             Name = "Electrum",
                             Value = 50
                         },
                         new
                         {
                             Id = 4,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5604),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9324),
                             Name = "Gold",
                             Value = 100
                         },
                         new
                         {
                             Id = 5,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5606),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9326),
                             Name = "Platinum",
-                            Value = 100
+                            Value = 1000
                         });
                 });
 
@@ -349,7 +349,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(6745),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(544),
                             GuaranteedFind = false,
                             LootId = 1,
                             LootTableId = 1,
@@ -359,7 +359,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7200),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(1002),
                             GuaranteedFind = false,
                             LootId = 2,
                             LootTableId = 1,
@@ -369,7 +369,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7208),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 911, DateTimeKind.Local).AddTicks(1009),
                             GuaranteedFind = false,
                             LootId = 4,
                             LootTableId = 1,
@@ -401,7 +401,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5984),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(9764),
                             Name = "Simple Coins",
                             Note = "A mix of silver and copper with a low chance of golden coins appearing (max 2)"
                         });
@@ -427,13 +427,13 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 570, DateTimeKind.Local).AddTicks(8688),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 908, DateTimeKind.Local).AddTicks(3077),
                             Label = "Sticker"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 572, DateTimeKind.Local).AddTicks(8522),
+                            Created = new DateTime(2021, 5, 9, 22, 50, 11, 910, DateTimeKind.Local).AddTicks(2219),
                             Label = "Background"
                         });
                 });

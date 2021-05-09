@@ -1,5 +1,6 @@
 ﻿using easydd.application.services;
 using easydd.core.interfaces;
+using easydd.core.interfaces.service;
 using easydd.core.model;
 
 namespace easydd.web.Controllers

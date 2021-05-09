@@ -11,9 +11,11 @@ namespace easydd.test
         {
             // arrange
             Assert.True(typeof(EasyImage).IsSubclassOf(typeof(Entity)));
+            Assert.True(typeof(EasyImageTag).IsSubclassOf(typeof(Entity)));
             Assert.True(typeof(Tag).IsSubclassOf(typeof(Entity)));
-            Assert.True(typeof(CoinLoot).IsSubclassOf(typeof(Entity)));
-            Assert.True(typeof(Coin).IsSubclassOf(typeof(Entity)));
+            Assert.True(typeof(Loot).IsSubclassOf(typeof(Entity)));
+            Assert.True(typeof(LootChance).IsSubclassOf(typeof(Entity)));
+            Assert.True(typeof(LootTable).IsSubclassOf(typeof(Entity)));
         }
 
         [Fact]

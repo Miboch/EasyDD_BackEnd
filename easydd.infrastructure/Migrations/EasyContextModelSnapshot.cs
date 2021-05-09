@@ -115,6 +115,51 @@ namespace easydd.infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("easydd.core.model.Coin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("BaseValue")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CoinLootId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Denomination")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Probability")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CoinLootId");
+
+                    b.ToTable("Coins");
+                });
+
+            modelBuilder.Entity("easydd.core.model.CoinLoot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LootName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CoinLoot");
+                });
+
             modelBuilder.Entity("easydd.core.model.EasyRole", b =>
                 {
                     b.Property<int>("Id")
@@ -207,6 +252,157 @@ namespace easydd.infrastructure.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("easydd.core.model.Loot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Loot");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(640),
+                            Name = "Copper",
+                            Value = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1085),
+                            Name = "Silver",
+                            Value = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1094),
+                            Name = "Electrum",
+                            Value = 50
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1096),
+                            Name = "Gold",
+                            Value = 100
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1098),
+                            Name = "Platinum",
+                            Value = 100
+                        });
+                });
+
+            modelBuilder.Entity("easydd.core.model.LootChance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("GuaranteedFind")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LootId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LootTableId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("MaxOccurrence")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("WeightedOccurrence")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LootId");
+
+                    b.HasIndex("LootTableId");
+
+                    b.ToTable("LootChances");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2219),
+                            GuaranteedFind = false,
+                            LootId = 1,
+                            LootTableId = 1,
+                            MaxOccurrence = 0,
+                            WeightedOccurrence = 20
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2674),
+                            GuaranteedFind = false,
+                            LootId = 2,
+                            LootTableId = 1,
+                            MaxOccurrence = 0,
+                            WeightedOccurrence = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2682),
+                            GuaranteedFind = false,
+                            LootId = 4,
+                            LootTableId = 1,
+                            MaxOccurrence = 2,
+                            WeightedOccurrence = 1
+                        });
+                });
+
+            modelBuilder.Entity("easydd.core.model.LootTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LootTables");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1457),
+                            Name = "Simple Coins",
+                            Note = "A mix of silver and copper with a low chance of golden coins appearing (max 2)"
+                        });
+                });
+
             modelBuilder.Entity("easydd.core.model.Tag", b =>
                 {
                     b.Property<int>("Id")
@@ -222,6 +418,20 @@ namespace easydd.infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 967, DateTimeKind.Local).AddTicks(3111),
+                            Label = "Sticker"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 969, DateTimeKind.Local).AddTicks(3756),
+                            Label = "Background"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -273,6 +483,49 @@ namespace easydd.infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("easydd.core.model.Coin", b =>
+                {
+                    b.HasOne("easydd.core.model.CoinLoot", "CoinLoot")
+                        .WithMany("Coins")
+                        .HasForeignKey("CoinLootId");
+
+                    b.Navigation("CoinLoot");
+                });
+
+            modelBuilder.Entity("easydd.core.model.LootChance", b =>
+                {
+                    b.HasOne("easydd.core.model.Loot", "Loot")
+                        .WithMany("Chances")
+                        .HasForeignKey("LootId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("easydd.core.model.LootTable", "LootTable")
+                        .WithMany("LootChances")
+                        .HasForeignKey("LootTableId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Loot");
+
+                    b.Navigation("LootTable");
+                });
+
+            modelBuilder.Entity("easydd.core.model.CoinLoot", b =>
+                {
+                    b.Navigation("Coins");
+                });
+
+            modelBuilder.Entity("easydd.core.model.Loot", b =>
+                {
+                    b.Navigation("Chances");
+                });
+
+            modelBuilder.Entity("easydd.core.model.LootTable", b =>
+                {
+                    b.Navigation("LootChances");
                 });
 #pragma warning restore 612, 618
         }

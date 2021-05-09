@@ -6,7 +6,7 @@ namespace easydd.core.model
     public class Entity
     {
         [Key] public int Id { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
 
+        public DateTime Created { get; set; } = DateTime.Now;
     }
 }

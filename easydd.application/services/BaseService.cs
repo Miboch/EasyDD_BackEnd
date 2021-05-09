@@ -15,27 +15,27 @@ namespace easydd.application.services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<TModelType>> Collection()
+        public virtual async Task<IEnumerable<TModelType>> Collection()
         {
             return await _repository.Collection().ToListAsync();
         }
 
-        public async Task<TModelType> Single(int id)
+        public virtual async Task<TModelType> Single(int id)
         {
             return await _repository.Single(id);
         }
 
-        public async Task<bool> Delete(int id)
+        public virtual async Task<bool> Delete(int id)
         {
             return await _repository.Delete(id);
         }
 
-        public async Task<TModelType> Update(TModelType model)
+        public virtual async Task<TModelType> Update(TModelType model)
         {
             return await _repository.Update(model);
         }
 
-        public async Task<TModelType> Create(TModelType model)
+        public virtual async Task<TModelType> Create(TModelType model)
         {
             return await _repository.Create(model);
         }

@@ -18,13 +18,13 @@ namespace easydd.web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Collection()
+        public virtual async Task<IActionResult> Collection()
         {
             return Ok(await _service.Collection());
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> Single(int id)
+        public virtual async Task<IActionResult> Single(int id)
         {
             var model = await _service.Single(id);
             if (null == model)
@@ -33,7 +33,7 @@ namespace easydd.web.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> Delete(int id)
+        public virtual async Task<IActionResult> Delete(int id)
         {
             var deleted = await _service.Delete(id);
             if (!deleted)
@@ -42,14 +42,14 @@ namespace easydd.web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] TModelType model)
+        public virtual async Task<IActionResult> Update([FromBody] TModelType model)
         {
             var done = await _service.Update(model);
             return Ok(done);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] TModelType model)
+        public virtual async Task<IActionResult> Create([FromBody] TModelType model)
         {
             var done = await _service.Create(model);
             return Ok(done);

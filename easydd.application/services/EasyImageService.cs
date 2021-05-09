@@ -5,11 +5,11 @@ using easydd.core.model;
 
 namespace easydd.application.services
 {
-    public class TagService : BaseService<Tag>, ITagService
+    public class EasyImageService : BaseService<EasyImage>, IEasyImageService
     {
-        private ITagRepository _repository;
+        private IEasyImageRepository _repository;
 
-        public TagService(ITagRepository repository) : base(repository)
+        public EasyImageService(IEasyImageRepository repository) : base(repository)
         {
             _repository = repository;
         }

@@ -4,9 +4,9 @@ using easydd.infrastructure.context;
 
 namespace easydd.infrastructure.repository
 {
-    public class TagRepository : BaseRepository<Tag>, ITagRepository
+    public class LootChanceRepository : BaseRepository<LootChance>, ILootChanceRepository
     {
-        public TagRepository(EasyContext context) : base(context)
+        public LootChanceRepository(EasyContext context) : base(context)
         {
         }
     }

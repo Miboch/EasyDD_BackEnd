@@ -16,11 +16,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "dotnet build && dotnet run",
+    "start": "dotnet build && dotnet run --project easydd.web",
     "build": "dotnet build",
 	"migrate": "powershell -file migrate.ps1",
 	"udb": "dotnet-ef database update --project=\".\\easydd.infrastructure\" --startup-project=\".\\easydd.web\"",
-    "clean": ""
+    "clean": "powershell -file cleanup.ps1"
   },
   "repository": {
     "type": "git",

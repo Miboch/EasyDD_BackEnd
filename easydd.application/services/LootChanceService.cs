@@ -5,11 +5,10 @@ using easydd.core.model;
 
 namespace easydd.application.services
 {
-    public class TagService : BaseService<Tag>, ITagService
+    public class LootChanceService : BaseService<LootChance>, ILootChanceService
     {
-        private ITagRepository _repository;
-
-        public TagService(ITagRepository repository) : base(repository)
+        private ILootChanceRepository _repository;
+        public LootChanceService(ILootChanceRepository repository) : base(repository)
         {
             _repository = repository;
         }

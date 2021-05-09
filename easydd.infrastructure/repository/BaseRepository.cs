@@ -20,17 +20,17 @@ namespace easydd.infrastructure.repository
             DbSet = this.context.Set<TModelType>();
         }
 
-        public IQueryable<TModelType> Collection()
+        public virtual IQueryable<TModelType> Collection()
         {
             return DbSet.AsQueryable();
         }
 
-        public async Task<TModelType> Single(int id)
+        public virtual async Task<TModelType> Single(int id)
         {
             return await DbSet.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<bool> Delete(int id)
+        public virtual async Task<bool> Delete(int id)
         {
             var entity = await DbSet.FindAsync(id);
             if (null != entity)
@@ -38,17 +38,18 @@ namespace easydd.infrastructure.repository
                 DbSet.Remove(entity);
                 await SaveChanges();
             }
+
             return null != entity;
         }
 
-        public async Task<TModelType> Update(TModelType model)
+        public virtual async Task<TModelType> Update(TModelType model)
         {
             DbSet.Update(model);
             await SaveChanges();
             return model;
         }
 
-        public async Task<TModelType> Create(TModelType model)
+        public virtual async Task<TModelType> Create(TModelType model)
         {
             DbSet.Add(model);
             await SaveChanges();
@@ -59,6 +60,5 @@ namespace easydd.infrastructure.repository
         {
             await context.SaveChangesAsync();
         }
-
     }
 }

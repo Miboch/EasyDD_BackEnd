@@ -13,23 +13,35 @@ To run this project you must have the .NET 5 SDK installed on your computer.
 
 [Find the latest version here](https://dotnet.microsoft.com/download/dotnet/5.0)
 
+Additionally, you will need the `DotNet-EF tools` added to your CLI Globally
+
+```powershell
+# ADDING DOTNET-EF TOOLS GLOBALLY (requires the .NET CLI to be installed first):
+dotnet tool install --global dotnet-ef   
+```
+
+If you already have the tooling installed, you can ensure it is updated by running the following command instead
+
+```powershell
+# UPDATING DOTNET-EF TOOLS GLOBALLY (requires the .NET CLI to be installed first):
+dotnet tool update --global dotnet-ef
+```
+
 ## Installation
  - After downloading and extracting the project, open your terminal of choice and change directory into the project folder
- - Run one of the following commands:
+ - Run `dotnet restore`
+ - Run the migration script to create the database file (first time only, or after cleanup) `npm run udb`
+ - Once the database file has been created (default name 'easydd.db') inside the `.\easydd.web` folder you should be ready to run the project 
  
- **Using NPM** 
- 
- ```npm start```
+ ###Using NPM
+ ```
+ npm run start
+ ```
 
-**Using .NET**
+###Using .NET
 
 ```
-dotnet build
-dotnet run
+dotnet run --project easydd.web
 ``` 
 
-
-## Getting Started
-Once the project has been downloaded and installed you can easily get started by running the `start` command.
-
-Before running the project, check the `appSettings.json` file for runtime configuration options.
+The server should now be running on localhost:5001.

@@ -10,6 +10,8 @@ namespace easydd.infrastructure
     {
         public static IServiceCollection RegisterInfrastructure(this IServiceCollection services)
         {
+            services.AddScoped<IEasyImageRepository, EasyImageRepository>();
+            services.AddScoped<IEasyImageTagRepository, EasyImageTagRepository>();
             services.AddScoped<ILootChanceRepository, LootChanceRepository>();
             services.AddScoped<ILootRepository, LootRepository>();
             services.AddScoped<ILootTableRepository, LootTableRepository>();

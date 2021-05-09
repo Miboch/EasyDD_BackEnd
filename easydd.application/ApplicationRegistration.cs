@@ -10,6 +10,8 @@ namespace easydd.application
     {
         public static IServiceCollection RegisterApplication(this IServiceCollection services)
         {
+            services.AddScoped<IEasyImageService, EasyImageService>();
+            services.AddScoped<IEasyImageTagService, EasyImageTagService>();
             services.AddScoped<ILootService, LootService>();
             services.AddScoped<ILootChanceService, LootChanceService>();
             services.AddScoped<ILootTableService, LootTableService>();

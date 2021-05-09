@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace easydd.infrastructure.Migrations
 {
-    public partial class loot : Migration
+    public partial class images : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,17 +49,19 @@ namespace easydd.infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CoinLoot",
+                name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    LootName = table.Column<string>(type: "TEXT", nullable: true),
+                    ImgPath = table.Column<string>(type: "TEXT", nullable: false),
+                    ImageName = table.Column<string>(type: "TEXT", nullable: false),
+                    ImageData = table.Column<byte[]>(type: "BLOB", nullable: true),
                     Created = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CoinLoot", x => x.Id);
+                    table.PrimaryKey("PK_Images", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -213,29 +215,6 @@ namespace easydd.infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Coins",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Denomination = table.Column<string>(type: "TEXT", nullable: true),
-                    BaseValue = table.Column<int>(type: "INTEGER", nullable: false),
-                    Probability = table.Column<double>(type: "REAL", nullable: false),
-                    CoinLootId = table.Column<int>(type: "INTEGER", nullable: true),
-                    Created = table.Column<DateTime>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Coins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Coins_CoinLoot_CoinLootId",
-                        column: x => x.CoinLootId,
-                        principalTable: "CoinLoot",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "LootChances",
                 columns: table => new
                 {
@@ -265,60 +244,87 @@ namespace easydd.infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Loot",
-                columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(640), "Copper", 1 });
+            migrationBuilder.CreateTable(
+                name: "ImageTags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    EasyImageId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TagId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Created = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImageTags", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ImageTags_Images_EasyImageId",
+                        column: x => x.EasyImageId,
+                        principalTable: "Images",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ImageTags_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1085), "Silver", 10 });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5159), "Copper", 1 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 3, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1094), "Electrum", 50 });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5593), "Silver", 10 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 4, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1096), "Gold", 100 });
+                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5601), "Electrum", 50 });
 
             migrationBuilder.InsertData(
                 table: "Loot",
                 columns: new[] { "Id", "Created", "Name", "Value" },
-                values: new object[] { 5, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1098), "Platinum", 100 });
+                values: new object[] { 4, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5604), "Gold", 100 });
+
+            migrationBuilder.InsertData(
+                table: "Loot",
+                columns: new[] { "Id", "Created", "Name", "Value" },
+                values: new object[] { 5, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5606), "Platinum", 100 });
 
             migrationBuilder.InsertData(
                 table: "LootTables",
                 columns: new[] { "Id", "Created", "Name", "Note" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1457), "Simple Coins", "A mix of silver and copper with a low chance of golden coins appearing (max 2)" });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5984), "Simple Coins", "A mix of silver and copper with a low chance of golden coins appearing (max 2)" });
 
             migrationBuilder.InsertData(
                 table: "Tags",
                 columns: new[] { "Id", "Created", "Label" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 19, 4, 41, 967, DateTimeKind.Local).AddTicks(3111), "Sticker" });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 570, DateTimeKind.Local).AddTicks(8688), "Sticker" });
 
             migrationBuilder.InsertData(
                 table: "Tags",
                 columns: new[] { "Id", "Created", "Label" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 19, 4, 41, 969, DateTimeKind.Local).AddTicks(3756), "Background" });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 572, DateTimeKind.Local).AddTicks(8522), "Background" });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 1, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2219), false, 1, 1, 0, 20 });
+                values: new object[] { 1, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(6745), false, 1, 1, 0, 20 });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 2, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2674), false, 2, 1, 0, 10 });
+                values: new object[] { 2, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7200), false, 2, 1, 0, 10 });
 
             migrationBuilder.InsertData(
                 table: "LootChances",
                 columns: new[] { "Id", "Created", "GuaranteedFind", "LootId", "LootTableId", "MaxOccurrence", "WeightedOccurrence" },
-                values: new object[] { 3, new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2682), false, 4, 1, 2, 1 });
+                values: new object[] { 3, new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7208), false, 4, 1, 2, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -358,9 +364,14 @@ namespace easydd.infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Coins_CoinLootId",
-                table: "Coins",
-                column: "CoinLootId");
+                name: "IX_ImageTags_EasyImageId",
+                table: "ImageTags",
+                column: "EasyImageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ImageTags_TagId",
+                table: "ImageTags",
+                column: "TagId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LootChances_LootId",
@@ -391,13 +402,10 @@ namespace easydd.infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Coins");
+                name: "ImageTags");
 
             migrationBuilder.DropTable(
                 name: "LootChances");
-
-            migrationBuilder.DropTable(
-                name: "Tags");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -406,7 +414,10 @@ namespace easydd.infrastructure.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "CoinLoot");
+                name: "Images");
+
+            migrationBuilder.DropTable(
+                name: "Tags");
 
             migrationBuilder.DropTable(
                 name: "Loot");

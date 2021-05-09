@@ -10,6 +10,8 @@ namespace easydd.infrastructure.context
         public DbSet<Loot> Loot { get; set; }
         public DbSet<LootChance> LootChances { get; set; }
         public DbSet<LootTable> LootTables { get; set; }
+        public DbSet<EasyImage> Images { get; set; }
+        public DbSet<EasyImageTag> ImageTags { get; set; }
 
 
         public EasyContext(DbContextOptions<EasyContext> options) : base(options)

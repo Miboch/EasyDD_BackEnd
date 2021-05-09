@@ -115,35 +115,32 @@ namespace easydd.infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("easydd.core.model.Coin", b =>
+            modelBuilder.Entity("easydd.core.model.EasyImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("BaseValue")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("CoinLootId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("Created")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Denomination")
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("BLOB");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Probability")
-                        .HasColumnType("REAL");
+                    b.Property<string>("ImgPath")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoinLootId");
-
-                    b.ToTable("Coins");
+                    b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("easydd.core.model.CoinLoot", b =>
+            modelBuilder.Entity("easydd.core.model.EasyImageTag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -152,12 +149,19 @@ namespace easydd.infrastructure.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("LootName")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("EasyImageId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.ToTable("CoinLoot");
+                    b.HasIndex("EasyImageId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ImageTags");
                 });
 
             modelBuilder.Entity("easydd.core.model.EasyRole", b =>
@@ -275,35 +279,35 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(640),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5159),
                             Name = "Copper",
                             Value = 1
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1085),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5593),
                             Name = "Silver",
                             Value = 10
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1094),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5601),
                             Name = "Electrum",
                             Value = 50
                         },
                         new
                         {
                             Id = 4,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1096),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5604),
                             Name = "Gold",
                             Value = 100
                         },
                         new
                         {
                             Id = 5,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1098),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5606),
                             Name = "Platinum",
                             Value = 100
                         });
@@ -345,7 +349,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2219),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(6745),
                             GuaranteedFind = false,
                             LootId = 1,
                             LootTableId = 1,
@@ -355,7 +359,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2674),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7200),
                             GuaranteedFind = false,
                             LootId = 2,
                             LootTableId = 1,
@@ -365,7 +369,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(2682),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(7208),
                             GuaranteedFind = false,
                             LootId = 4,
                             LootTableId = 1,
@@ -397,7 +401,7 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 970, DateTimeKind.Local).AddTicks(1457),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 573, DateTimeKind.Local).AddTicks(5984),
                             Name = "Simple Coins",
                             Note = "A mix of silver and copper with a low chance of golden coins appearing (max 2)"
                         });
@@ -423,13 +427,13 @@ namespace easydd.infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 967, DateTimeKind.Local).AddTicks(3111),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 570, DateTimeKind.Local).AddTicks(8688),
                             Label = "Sticker"
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 5, 9, 19, 4, 41, 969, DateTimeKind.Local).AddTicks(3756),
+                            Created = new DateTime(2021, 5, 9, 22, 43, 59, 572, DateTimeKind.Local).AddTicks(8522),
                             Label = "Background"
                         });
                 });
@@ -485,13 +489,23 @@ namespace easydd.infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("easydd.core.model.Coin", b =>
+            modelBuilder.Entity("easydd.core.model.EasyImageTag", b =>
                 {
-                    b.HasOne("easydd.core.model.CoinLoot", "CoinLoot")
-                        .WithMany("Coins")
-                        .HasForeignKey("CoinLootId");
+                    b.HasOne("easydd.core.model.EasyImage", "EasyImage")
+                        .WithMany("ImageTags")
+                        .HasForeignKey("EasyImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("CoinLoot");
+                    b.HasOne("easydd.core.model.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EasyImage");
+
+                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("easydd.core.model.LootChance", b =>
@@ -513,9 +527,9 @@ namespace easydd.infrastructure.Migrations
                     b.Navigation("LootTable");
                 });
 
-            modelBuilder.Entity("easydd.core.model.CoinLoot", b =>
+            modelBuilder.Entity("easydd.core.model.EasyImage", b =>
                 {
-                    b.Navigation("Coins");
+                    b.Navigation("ImageTags");
                 });
 
             modelBuilder.Entity("easydd.core.model.Loot", b =>

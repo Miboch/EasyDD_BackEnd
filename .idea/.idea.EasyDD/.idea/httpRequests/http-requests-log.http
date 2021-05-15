@@ -1,0 +1,59 @@
+GET https://localhost:5001/api/loottable/loot?tableid=1&value=100
+Accept: application/json
+
+<> 2021-05-11T044057.200.json
+
+###
+
+GET https://localhost:5001/api/loottable/loot?tableid=1&value=200
+Accept: application/json
+
+<> 2021-05-11T044049.200.json
+
+###
+
+GET https://localhost:5001/api/loottable/loot?tableid=1&value=200
+Accept: application/json
+
+<> 2021-05-11T044044.200.json
+
+###
+
+GET https://localhost:5001/api/loottable/loot?tableid=1&value=200
+Accept: application/json
+
+<> 2021-05-11T044034.200.json
+
+###
+
+GET https://localhost:5001/api/loottable/loot/tableid=1&value=200
+Accept: application/json
+
+###
+
+GET https://localhost:5001/api/loottable/loot/id=1&amount=200
+Accept: application/json
+
+###
+
+GET https://localhost:5001/api/loottable/1
+Accept: application/json
+
+<> 2021-05-11T043942.200.json
+
+###
+
+GET https://localhost:5001/api/loot/1
+Accept: application/json
+
+<> 2021-05-11T043922.200.json
+
+###
+
+GET https://localhost:5001/api/loot
+Accept: application/json
+
+<> 2021-05-11T043905.200.json
+
+###
+

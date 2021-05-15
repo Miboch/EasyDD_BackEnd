@@ -1,0 +1,72 @@
+{
+  "name": "Simple Coins",
+  "note": "A mix of silver and copper with a low chance of golden coins appearing (max 2)",
+  "lootChances": [
+    {
+      "weightedOccurrence": 20,
+      "guaranteedFind": false,
+      "maxOccurrence": 0,
+      "lootId": 1,
+      "loot": {
+        "name": "Copper",
+        "value": 1,
+        "chances": [],
+        "id": 1,
+        "created": "2021-05-09T22:50:11.9108874"
+      },
+      "lootTableId": 1,
+      "id": 1,
+      "created": "2021-05-09T22:50:11.9110544"
+    },
+    {
+      "weightedOccurrence": 10,
+      "guaranteedFind": false,
+      "maxOccurrence": 0,
+      "lootId": 2,
+      "loot": {
+        "name": "Silver",
+        "value": 10,
+        "chances": [],
+        "id": 2,
+        "created": "2021-05-09T22:50:11.9109312"
+      },
+      "lootTableId": 1,
+      "id": 2,
+      "created": "2021-05-09T22:50:11.9111002"
+    },
+    {
+      "weightedOccurrence": 1,
+      "guaranteedFind": false,
+      "maxOccurrence": 2,
+      "lootId": 4,
+      "loot": {
+        "name": "Gold",
+        "value": 100,
+        "chances": [],
+        "id": 4,
+        "created": "2021-05-09T22:50:11.9109324"
+      },
+      "lootTableId": 1,
+      "id": 3,
+      "created": "2021-05-09T22:50:11.9111009"
+    },
+    {
+      "weightedOccurrence": 5,
+      "guaranteedFind": false,
+      "maxOccurrence": 4,
+      "lootId": 6,
+      "loot": {
+        "name": "Healing Potion",
+        "value": 30,
+        "chances": [],
+        "id": 6,
+        "created": "2021-05-11T02:31:42.255"
+      },
+      "lootTableId": 1,
+      "id": 6,
+      "created": "2021-05-11T04:35:07.1402565"
+    }
+  ],
+  "id": 1,
+  "created": "2021-05-09T22:50:11.9109764"
+}

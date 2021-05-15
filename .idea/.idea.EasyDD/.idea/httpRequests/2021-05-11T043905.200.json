@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Copper",
+    "value": 1,
+    "chances": null,
+    "id": 1,
+    "created": "2021-05-09T22:50:11.9108874"
+  },
+  {
+    "name": "Silver",
+    "value": 10,
+    "chances": null,
+    "id": 2,
+    "created": "2021-05-09T22:50:11.9109312"
+  },
+  {
+    "name": "Electrum",
+    "value": 50,
+    "chances": null,
+    "id": 3,
+    "created": "2021-05-09T22:50:11.9109321"
+  },
+  {
+    "name": "Gold",
+    "value": 100,
+    "chances": null,
+    "id": 4,
+    "created": "2021-05-09T22:50:11.9109324"
+  },
+  {
+    "name": "Platinum",
+    "value": 1000,
+    "chances": null,
+    "id": 5,
+    "created": "2021-05-09T22:50:11.9109326"
+  },
+  {
+    "name": "Healing Potion",
+    "value": 30,
+    "chances": null,
+    "id": 6,
+    "created": "2021-05-11T02:31:42.255"
+  }
+]

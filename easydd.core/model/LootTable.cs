@@ -7,6 +7,6 @@ namespace easydd.core.model
     {
         public string Name { get; set; }
         public string Note { get; set; }
-       [JsonIgnore] public IEnumerable<LootChance> LootChances { get; set; }
+        [JsonIgnore] public IEnumerable<LootChance> LootChances { get; set; }
     }
 }

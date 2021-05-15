@@ -58,6 +58,7 @@ namespace easydd.web
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "easydd.web v1"));
+                app.UseCors(o => o.AllowAnyMethod().AllowAnyOrigin());
             }
 
             app.UseHttpsRedirection();
